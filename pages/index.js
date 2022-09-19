@@ -18,7 +18,6 @@ export default function Home({ latestComics }) {
                   <Image
                     width={comic.width}
                     height={comic.height}
-                    objectFit="contain"
                     src={comic.img}
                     alt={comic.alt}
                   />

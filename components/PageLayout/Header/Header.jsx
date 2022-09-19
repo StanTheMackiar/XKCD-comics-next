@@ -15,13 +15,7 @@ const Header = () => {
 
   return (
     <div className={styles.container}>
-     <Navbar  variant="sticky" isBordered css={{
-          maxW: "1400px",
-          m: "0 auto",
-          "@xsMax": {
-            maxW: "20px",
-          }
-        }}>
+     <Navbar  variant="sticky">
      <Navbar.Toggle showIn="xs" />
 
         <Navbar.Brand css={{
