@@ -1,0 +1,24 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.p {
+    margin: 1rem;
+}
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem;
+    width: 100%;
+}
+.button {
+    background-color: rgb(173, 183, 230);
+    padding: 0.5rem;
+    color: white;
+    margin: 0.3rem;
+    border-radius: 0.3rem;
+}
