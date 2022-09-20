@@ -1,13 +1,18 @@
-import PageLayout from "../../components/PageLayout";
+import PageLayout from "../../components/Layout/PageLayout";
 import fs from "fs/promises";
 import Image from "next/image";
 import styles from "../../styles/Comic.module.css";
 import { basename } from "path";
 import Link from "next/link";
+import { Button } from "@nextui-org/react";
+import { useRouter } from "next/router";
 
 const Comic = ({ id, img, height, width, alt, title, hasPrevious, hasNext, nextId, prevId }) => {
+  
+  const router = useRouter();
+
   return (
-    <PageLayout title={`Comic #${id}`}>
+    <PageLayout title={`xkcd: #${id}`}>
       <section className={styles.section}>
         <h2>{title}</h2>
         <h4>Comic #{id}</h4>
@@ -20,10 +25,10 @@ const Comic = ({ id, img, height, width, alt, title, hasPrevious, hasNext, nextI
         <p className={styles.p}>{alt}</p>
         <div className={styles.buttonContainer}>
         {
-          hasPrevious && <Link href={`/comic/${prevId}`}><a className={styles.button}>Previous</a></Link> 
+          hasPrevious && <Button onPress={()=> router.push(`/comic/${prevId}`)} size="sm">Previous</Button>
         }
         {
-          hasNext && <Link href={`/comic/${nextId}`}><a className={styles.button}>Next</a></Link> 
+          hasNext && <Button size="sm" onPress={()=> router.push(`/comic/${nextId}`)}>Next</Button>
         }
         </div>
       </section>

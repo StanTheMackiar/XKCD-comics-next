@@ -7,6 +7,8 @@
 }
 .p {
     margin: 1rem;
+    width: 80%;
+    text-align: justify;
 }
 .buttonContainer {
     display: flex;
@@ -14,11 +16,4 @@
     justify-content: space-evenly;
     padding: 1rem;
     width: 100%;
-}
-.button {
-    background-color: rgb(173, 183, 230);
-    padding: 0.5rem;
-    color: white;
-    margin: 0.3rem;
-    border-radius: 0.3rem;
 }

@@ -1,18 +1,22 @@
-import PageLayout from "../components/PageLayout";
+import PageLayout from "../components/Layout/PageLayout";
 import fs from "fs/promises";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Home.module.css"
+import styles from "../styles/Home.module.css";
 
 export default function Home({ latestComics }) {
   return (
-    <PageLayout title={"XKCD - Home"}>
+    <PageLayout title={"xkcd: Home"}>
       <h2 className={styles.h2}>Latest comics</h2>
       <section className={styles.grid}>
         {latestComics.map((comic) => {
           return (
-            <div key={comic.id} className={styles.comic}>
-              <h3>{comic.title} <i>#{comic.id}</i></h3>
+            <div
+              key={comic.id}
+              className={styles.comic}>
+              <h3>
+                {comic.title} <i>#{comic.id}</i>
+              </h3>
               <Link href={`/comic/${comic.id}`}>
                 <a>
                   <Image
@@ -26,14 +30,16 @@ export default function Home({ latestComics }) {
             </div>
           );
         })}
-        </section>
+      </section>
     </PageLayout>
   );
 }
 
 export async function getStaticProps(context) {
+  console.log(context);
+
   const files = await fs.readdir("./comics");
-  const latestComicsFiles = files.slice(-20, files.length);
+  const latestComicsFiles = files.slice(-10, files.length);
 
   const promisesReadFiles = latestComicsFiles.map(async (file) => {
     const content = await fs.readFile(`./comics/${file}`, "utf8");

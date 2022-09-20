@@ -1,9 +1,9 @@
-import PageLayout from "../components/PageLayout";
+import PageLayout from "../components/Layout/PageLayout";
 import styles from "../styles/About.module.css";
 
 const about = () => {
   return (
-    <PageLayout title={"XKCD - About"}>
+    <PageLayout title={"xkcd: Copyright"}>
       <section className={styles.section}>
         <h2>Copyright</h2>
         <p className={styles.p}>
