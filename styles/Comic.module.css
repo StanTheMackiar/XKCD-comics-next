@@ -6,9 +6,10 @@
     padding: 1rem;
 }
 .p {
-    margin: 1rem;
+    padding: 2rem;
     width: 80%;
-    text-align: justify;
+    text-align: center;
+    margin: 0 auto;
 }
 .buttonContainer {
     display: flex;

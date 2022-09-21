@@ -3,7 +3,6 @@ import fs from "fs/promises";
 import Image from "next/image";
 import styles from "../../styles/Comic.module.css";
 import { basename } from "path";
-import Link from "next/link";
 import { Button } from "@nextui-org/react";
 import { useRouter } from "next/router";
 
